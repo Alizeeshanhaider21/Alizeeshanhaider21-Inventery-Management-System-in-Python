@@ -1,0 +1,2 @@
+product_id,name,category,price,stock_quantity,low_stock_threshold
+00001,Ghee,Food,200.0,8,2
