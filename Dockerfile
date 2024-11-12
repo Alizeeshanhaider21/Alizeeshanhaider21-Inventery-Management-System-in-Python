@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /inventory_management_system
 
 # copy all files to inventory_management_system directory
-COPY . /inventory_management_system/
+COPY . /inventory_management_system
 
 RUN pip install poetry
 

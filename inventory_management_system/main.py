@@ -3,11 +3,14 @@
 import csv
 from product import Product
 from auth import AuthService
+import os
 
 class InventoryManagementSystem:
-    PURCHASES_CSV = 'purchases.csv'
+    PURCHASES_CSV = './inventory_management_system/files/purchases.csv'
  
-    def __init__(self, csv_file='inventory.csv'):
+    def __init__(self, csv_file='./inventory_management_system/files/inventory.csv'):
+        # print(os.listdir())
+        # C:\Users\ZEESHAN\Downloads\inventory-management-system\inventory_management_system\files\inventory.csv
         self.products = {}  # Store products by product_id
         self.csv_file = csv_file
         self.auth_service = AuthService()
@@ -75,12 +78,20 @@ class InventoryManagementSystem:
         else:
             print("No products found.")
 
-# main.py (excerpt)
-    # main.py (excerpt)
+
 
     def run(self):
-        username = input("Enter username: ")
-        password = input("Enter password: ")
+        try:
+            username = input("Enter username: ")
+        except EOFError:
+            username = "admin"
+        try:
+            password = input("Enter password: ")
+        except EOFError:
+            password = "admin123"
+            
+        # username = input("Enter username: ")
+        # password = input("Enter password: ")
         user = self.auth_service.authenticate(username, password)
         
         if user:

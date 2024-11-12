@@ -1,2 +1,4 @@
 product_id,name,category,price,stock_quantity,low_stock_threshold
 00001,Ghee,Food,200.0,8,2
+00002,Biscuits,Food,2420.0,15,5
+00003,Shampoo,Fashion,250.0,5,2
